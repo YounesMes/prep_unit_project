@@ -31,7 +31,6 @@ def select_all(conn):
 def print_rows(rows):
     """ Loop through the retrived rows of a table and print them"""
     # All of the function body is a todo task
-    rows_list=[rows]
-    for row in rows_list:
+    for row in rows:
         print(row)
-print_rows(rows)        
+      
