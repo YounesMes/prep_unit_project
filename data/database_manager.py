@@ -1,6 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-from sqlite3.dbapi2 import Connection
+from sqlite3.dbapi2 import Connection, Cursor
 
 
 def create_connection(db_file):
@@ -22,17 +22,16 @@ def close_connection(conn):
 def select_all(conn):
     """select all rows from our table using the conn we already created """
     cur = conn.cursor()
-    query = """SELECT * FROM longley  """ # To-Do write the query to retrive all data from the longley table 
-
+    query = "SELECT * FROM longley" # To-Do write the query to retrive all data from the longley table 
     cur.execute(query)
-
-    rows = None  # To-Do fetch all rows using the cursor cur
-
+    rows = cur.fetchall() # To-Do fetch all rows using the cursor cur
     return rows 
 
 
 def print_rows(rows):
     """ Loop through the retrived rows of a table and print them"""
     # All of the function body is a todo task
-    for row in rows:
+    rows_list=[rows]
+    for row in rows_list:
         print(row)
+print_rows(rows)        
